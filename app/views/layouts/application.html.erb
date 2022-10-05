@@ -14,6 +14,9 @@
     <header>
      <% if end_user_signed_in? %>
       <li>
+        <%= link_to "ウチの子",pet_index_path %>
+        <%= link_to "記録",record_index_path %>
+        <%= link_to "フード",food_index_path %>
         <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
       </li>
      <% end %>
