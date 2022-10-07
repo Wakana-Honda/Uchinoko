@@ -8,8 +8,11 @@ class GenreController < ApplicationController
   # binding.pry
    @genre = Genre.new(genre_params)
    @genres = Genre.all
-   @genre.save
+   if @genre.save
     redirect_to genre_index_path
+   else
+     render:index
+   end
  end
  
  def edit
@@ -20,6 +23,12 @@ def update
    @genre = Genre.find(params[:id])
    @genre.update(genre_params)
    redirect_to genre_index_path(@genre.id)
+end
+
+def destroy
+  @genre = Genre.find(params[:id])
+  @genre.destroy
+  redirect_to genre_index_path
 end
 
 private

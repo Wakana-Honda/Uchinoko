@@ -1,2 +1,28 @@
-<h1>Food#new</h1>
-<p>Find me in app/views/food/new.html.erb</p>
+<h3><strong>フードの新規登録</strong></h3>
+
+<%= form_with model: @food, url: '/food', method: :post do |f| %>
+  
+ <div>
+  フードタイプ
+ </div>
+ 
+ <div>
+　フードジャンル
+ </div>
+ 
+ <!--<div class="form-group">-->
+ <!-- <= f.label :フードの写真 %>-->
+ <!-- <= f.file_field :food_image,class:"form-control-file user_image", accept:"image/*" %>-->
+ <!--</div>-->
+ <div class="form-group">
+  <%= f.label :フードの名前 %>
+  <%= f.text_field :name %>
+ </div>
+ <div class="form-group">
+  <%= f.label :メモ %>
+  <%= f.text_area :memo %>
+ </div>
+ 
+ <%= f.submit '登録する' %>
+ 
+<% end %>

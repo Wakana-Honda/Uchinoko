@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      genre:
+        name: ジャンル名
+  enums:
+      pet:
+        gender:
+          man: "オス"
+          woman: "メス"

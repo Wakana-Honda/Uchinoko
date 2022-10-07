@@ -1,2 +1,36 @@
-<h1>Pet#new</h1>
-<p>Find me in app/views/pet/new.html.erb</p>
+<h3><strong>ウチの子を新しく登録する</strong></h3>
+
+<%= form_with model: @pet, url: '/pet', method: :post do |f| %>
+  
+ <div class="form-group">
+  <%= f.label :ウチの子の写真 %>
+  <%= f.file_field :pet_image,class:"form-control-file user_image", accept:"image/*" %>
+ </div>
+ <div class="form-group">
+  <%= f.label :名前 %>
+  <%= f.text_field :name %>
+ </div>
+ <div class="form-group">
+  <%= f.label :年齢 %>
+  <%= f.select :age, *[1..30] %>
+ </div>
+ <div class="form-group">
+  <%= f.label :誕生日 %>
+  <%= f.date_select :birthday, use_month_numbers: true,
+     start_year: 1990, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
+
+ </div>
+ <div class="form-group">
+	<%= f.label :性別 %>
+  <%= f.radio_button :gender,"man" %>
+  <%= f.label :gender, "オス" %>
+  <%= f.radio_button :gender, "woman" %>
+  <%= f.label :gender, "メス"%>
+ </div>
+ <div class="form-group">
+  <%= f.label :メモ %>
+  <%= f.text_area :memo %>
+ </div>
+	
+  <%= f.submit '登録する' %>
+<% end %>
