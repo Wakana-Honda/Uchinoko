@@ -1,7 +1,39 @@
 class TypeController < ApplicationController
   def index
+   @type = Type.new
+   @types = Type.all
   end
+ 
+ def create
+  # binding.pry
+   @type = Type.new(type_params)
+   @types = Type.all
+   if @type.save
+    redirect_to type_index_path
+   else
+     render:index
+   end
+ end
+ 
+ def edit
+   @type = Type.find(params[:id])
+ end
 
-  def edit
+def update
+   @type = Type.find(params[:id])
+   @type.update(type_params)
+   redirect_to type_index_path(@type.id)
+end
+
+def destroy
+  @type = Type.find(params[:id])
+  @type.destroy
+  redirect_to type_index_path
+end
+
+private
+  def type_params
+    params.require(:type).permit(:name)
   end
+  
 end

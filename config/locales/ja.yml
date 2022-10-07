@@ -3,6 +3,8 @@ ja:
     attributes:
       genre:
         name: ジャンル名
+      type:
+        name: タイプ名
   enums:
       pet:
         gender:
