@@ -2,10 +2,10 @@
  <h3><strong>フードの詳細</strong></h3>
 </div>
 
- <%= image_tag @food.get_food_image(100,100) %>
- <%= @food.name %>
- <%= @food.types.name %>
- <%= @food.genres.name %>
- <%= @food.memo %>
+ フード画像<%= image_tag @food.get_food_image(100,100) %>
+ フードの名前<%= @food.name %>
+ <!--<= @food.type.name %>-->
+ <!--フードジャンル<= @food.genre.name %>-->
+ メモ<%= @food.memo %>
 
 

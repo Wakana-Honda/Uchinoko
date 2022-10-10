@@ -7,7 +7,7 @@ class FoodController < ApplicationController
    @food = Food.new(food_params)
    @food.end_user_id = current_end_user.id
    @food.save
-    redirect_to food_index_path
+    redirect_to food_index_path(@food.id)
  end
 
   def index
@@ -17,8 +17,9 @@ class FoodController < ApplicationController
 
   def show
    @food = Food.find(params[:id])
-   @genre = @food.genres
-   @type = @food.types
+   # @genre = @food.genre
+   # @type = @food.type
+   # binding.pry
   end
 
   def edit

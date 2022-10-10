@@ -1,5 +1,15 @@
-<h1>Record#index</h1>
-<p>Find me in app/views/record/index.html.erb</p>
+<div class = "title">
+ <h3><strong>記録一覧</strong></h3>
+</div>
+
+<div>
+<% @records.each do |record| %>
+
+ 摂取量<%= record.amount %>
+ メモ<%= record.memo %>
+
+<% end %>
+</div>
 
 <%= link_to "記録する",new_record_path %>
 
