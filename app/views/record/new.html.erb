@@ -2,12 +2,16 @@
 
 <%= form_with model: @record, url: '/record', method: :post do |f| %>
 
- <div>
-   ペットの名前
+ <div class="form-group">
+  <%= f.label :うちの子の名前 %>
+  <!--<= f.collection_select :pet_id, Pet.all, :id, :name, options = { include_blank: "選択してください" } %>-->
+  <%= f.select :pet_name, options_from_collection_for_select(Pet.all, :id, :name) %>
+
  </div>
  
- <div>
-   フードの名前
+ <div class="form-group">
+  <%= f.label :フード名 %>
+  <%= f.collection_select :food_name, Food.all, :id, :name, options = { include_blank: "選択してください" } %>
  </div>
  
  <div class="form-group">
