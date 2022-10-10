@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources:type,only:[:index,:create,:edit,:update,:destroy]
   resources:record
   resources:food
-  resources:pet
+  resources:pet,only:[:new,:index,:create,:edit,:update,:destroy]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

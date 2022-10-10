@@ -1,3 +1,26 @@
-<h3><strong>ウチの子一覧</strong></h3>
+<div class = "title">
+ <h3><strong>ウチの子たち</strong></h3>
+ <div class = "button">
+  <%= button_to 'うちの子を新しく登録する', new_pet_path, method: :get %>
+ </div>s
+</div>
 
-<%= link_to "うちの子を新しく登録する",new_pet_path %>
+<div class ="wrap around"> 
+  <% @pets.each do |pet| %>
+   <div class="pet">
+    <img class = "image">
+    <%= image_tag pet.get_pet_image(50,50) %>
+    </img>
+    <span class="info">
+    <%= pet.name %>
+    <%= pet.age %>歳<br>
+    <%= pet.birthday %>
+    <%= pet.gender_i18n %><br>
+    <%= pet.memo %>
+    </span>
+    <span class = "button">
+     <%= link_to 'うちの子を編集する', edit_pet_path(pet) %>
+    </span>
+   </div>
+  <% end %>
+</div>

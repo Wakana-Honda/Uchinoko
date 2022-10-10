@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_07_111210) do
+ActiveRecord::Schema.define(version: 2022_10_09_205732) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2022_10_07_111210) do
     t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "end_user_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_10_07_111210) do
     t.integer "gender"
     t.integer "age"
     t.date "birthday"
+    t.integer "end_user_id"
   end
 
   create_table "records", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2022_10_07_111210) do
     t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "end_user_id"
   end
 
   create_table "types", force: :cascade do |t|

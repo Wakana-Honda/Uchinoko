@@ -1,2 +1,11 @@
-<h1>Food#show</h1>
-<p>Find me in app/views/food/show.html.erb</p>
+<div class ="title">
+ <h3><strong>フードの詳細</strong></h3>
+</div>
+
+ <%= image_tag @food.get_food_image(100,100) %>
+ <%= @food.name %>
+ <%= @food.types.name %>
+ <%= @food.genres.name %>
+ <%= @food.memo %>
+
+

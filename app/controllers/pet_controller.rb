@@ -5,17 +5,31 @@ class PetController < ApplicationController
  
  def create
    @pet = Pet.new(pet_params)
+   @pet.end_user_id = current_end_user.id
    @pet.save
     redirect_to pet_index_path
  end
 
   def index
-  end
+   @pets = Pet.all
+   @pets = current_end_user.pets
 
-  def show
   end
 
   def edit
+   @pet = Pet.find(params[:id])
+  end
+  
+  def update
+   @pet = Pet.find(params[:id])
+   @pet.update(pet_params)
+   redirect_to pet_index_path(@pet.id)
+  end
+  
+  def destroy
+   @pet = Pet.find(params[:id])
+   @pet.destroy
+   redirect_to pet_index_path
   end
   
   private

@@ -1,10 +1,10 @@
-<h3><strong>ウチの子を新しく登録する</strong></h3>
+<h3><strong>ウチの子新規登録</strong></h3>
 
 <%= form_with model: @pet, url: '/pet', method: :post do |f| %>
   
  <div class="form-group">
   <%= f.label :ウチの子の写真 %>
-  <%= f.file_field :pet_image,class:"form-control-file user_image", accept:"image/*" %>
+  <%= f.file_field :pet_image,accept:"image/*" %>
  </div>
  <div class="form-group">
   <%= f.label :名前 %>
@@ -12,12 +12,12 @@
  </div>
  <div class="form-group">
   <%= f.label :年齢 %>
-  <%= f.select :age, *[1..30] %>
+  <%= f.select :age, *[0..30] %>
  </div>
  <div class="form-group">
   <%= f.label :誕生日 %>
   <%= f.date_select :birthday, use_month_numbers: true,
-     start_year: 1990, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
+     start_year: 1992, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
 
  </div>
  <div class="form-group">

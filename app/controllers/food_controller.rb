@@ -5,14 +5,20 @@ class FoodController < ApplicationController
  
  def create
    @food = Food.new(food_params)
+   @food.end_user_id = current_end_user.id
    @food.save
     redirect_to food_index_path
  end
 
   def index
+   @foods = Food.all
+   @foods = current_end_user.foods
   end
 
   def show
+   @food = Food.find(params[:id])
+   @genre = @food.genres
+   @type = @food.types
   end
 
   def edit
@@ -21,7 +27,7 @@ class FoodController < ApplicationController
   private
   # ストロングパラメータ
   def food_params
-    params.require(:food).permit(:type_id,:genre_id,:name,:memo)
+    params.require(:food).permit(:type_id,:genre_id,:name,:memo,:food_image)
   end
   
   

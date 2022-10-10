@@ -1,3 +1,3 @@
 class Type < ApplicationRecord
-  # belongs_to :foods
+ belongs_to :foods
 end
