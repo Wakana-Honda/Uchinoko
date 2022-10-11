@@ -1,6 +1,6 @@
 class Pet < ApplicationRecord
   belongs_to :end_user
-  belongs_to :records
+  has_many :records,dependent: :destroy
   has_one_attached :pet_image
   
   def get_pet_image(width, height)

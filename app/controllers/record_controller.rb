@@ -5,31 +5,43 @@ class RecordController < ApplicationController
   
   def create
    @record = Record.new(record_params)
-   @record.end_user_id = current_end_user.id
+   # @record = current_end_user.id
    @record.save
     redirect_to record_path(@record.id)
  end
 
  def show
-  # binding.pry
   @record = Record.find(params[:id])
-  # @pet = @record.pet_name
-  # @food = @record.food_name
+  # @pet = Record.find(params[:record][:name])
+  # @food = Food.find(params[:record][:name])
  end
 
   def index
+   # binding.pry
    @records = Record.all
-   # @records = current_end_user.records
   end
 
   def edit
+   @record = Record.find(params[:id])
+  end
+  
+  def update
+   @record = Record.find(params[:id])
+   @record.update(record_params)
+   redirect_to record_path(@record.id)
+  end
+  
+  def destroy
+   @record = Record.find(params[:id])
+   @record.destroy
+   redirect_to record_index_path
   end
   
   private
-  # ストロングパラメータ
+  
   def record_params
-    params.require(:record).permit(:amount,:memo,:pet_name,:food_name)
-    # :pet_id,:food_id,
+    params.require(:record).permit(:amount,:memo,:pet_id,:food_id)
+    # ,:pet_name,:food_name
   end
   
 end

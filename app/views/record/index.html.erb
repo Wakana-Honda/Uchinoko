@@ -4,10 +4,10 @@
 
 <div>
 <% @records.each do |record| %>
- <!--ペットの名前<= record.pets.name %>-->
- <!--フード名<= record.foods.name %>-->
- 摂取量<%= record.amount %>
- メモ<%= record.memo %>
+ ペットの名前<%= record.pet.name %>
+ フード名<%= record.food.name %>
+<%= link_to "詳細を見る",record_path(record.id) %>
+<%= link_to "削除",record_path(record.id),method: :delete %>
 
 <% end %>
 </div>
