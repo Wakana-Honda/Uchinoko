@@ -4,8 +4,8 @@
 
  フード画像<%= image_tag @food.get_food_image(100,100) %>
  フードの名前<%= @food.name %>
- <!--<= @food.type.name %>-->
- <!--フードジャンル<= @food.genre.name %>-->
+ フードタイプ<%= @food.type.name %>
+ フードジャンル<%= @food.genre.name %>
  メモ<%= @food.memo %>
 
-
+<%= link_to "フード一覧に戻る", food_index_path %>

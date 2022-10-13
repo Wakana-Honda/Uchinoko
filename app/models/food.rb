@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
-  belongs_to :end_user
+  belongs_to :end_user,optional: true
   has_many :records,dependent: :destroy
   has_many :genres, dependent: :destroy
   has_many :types, dependent: :destroy

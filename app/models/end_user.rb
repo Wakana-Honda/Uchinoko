@@ -5,7 +5,7 @@ class EndUser < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   # has_many :records, dependent: :destroy
-   has_many :pets, dependent: :destroy
-   has_many :foods, dependent: :destroy
+  has_many :pets, dependent: :destroy
+  has_many :foods, dependent: :destroy
  
 end

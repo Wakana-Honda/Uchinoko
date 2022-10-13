@@ -1,4 +1,4 @@
 class Genre < ApplicationRecord
-  belongs_to :foods
+  belongs_to :food
   validates :name, presence: true
 end
