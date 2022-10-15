@@ -2,6 +2,8 @@
 
 <%= form_with model: @record, url:'/record', method: :post do |f| %>
 
+ <%= render 'shared/errors', model: f.object %>
+
  <div class="form-group">
   <%= f.label :うちの子の名前 %>
   <%= f.collection_select :pet_id, Pet.all, :id, :name, options = { include_blank: "選択してください" } %>

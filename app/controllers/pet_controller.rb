@@ -25,8 +25,11 @@ class PetController < ApplicationController
   
   def update
    @pet = Pet.find(params[:id])
-   @pet.update(pet_params)
-   redirect_to pet_index_path(@pet.id)
+   if @pet.update(pet_params)
+    redirect_to pet_index_path(@pet.id)
+   else
+    render:edit
+   end
   end
   
   def destroy

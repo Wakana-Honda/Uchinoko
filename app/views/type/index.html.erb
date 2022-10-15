@@ -1,12 +1,5 @@
 <h3><strong>フードタイプ一覧・追加</strong></h3>
 
-<!--<if @genre.errors.any? %>-->
-  <!--<= @genre.errors.count %>件のエラーが発生しました-->
-    <!--< @type.errors.full_messages.each do |message| %>-->
-     <!--<= message %>-->
-    <!--< end %>-->
-<!--< end %>-->
-
 <%= form_with model: @type, url: '/type', method: :post do |f| %>
  <%= render 'shared/errors', model: f.object %>
 

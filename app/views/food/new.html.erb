@@ -3,10 +3,17 @@
 </div>
 
 <%= form_with model: @food, url:'/food', method: :post do |f| %>
+
+ <%= render 'shared/errors', model: f.object %>
  
  <div class="form-group">
   <%= f.label :フード画像 %>
   <%= f.file_field :food_image,accept:"image/*" %>
+ </div>
+ 
+ <div class="form-group">
+  <%= f.label :フードの名前 %>
+  <%= f.text_field :name %>
  </div>
  
  <div class="form-group">
@@ -19,10 +26,6 @@
   <%= f.collection_select :type_id, Type.all, :id, :name, options = { include_blank: "選択してください" } %>
  </div>
  
- <div class="form-group">
-  <%= f.label :フードの名前 %>
-  <%= f.text_field :name %>
- </div>
  <div class="form-group">
   <%= f.label :メモ %>
   <%= f.text_area :memo %>

@@ -5,9 +5,12 @@ class RecordController < ApplicationController
   
   def create
    @record = Record.new(record_params)
-   # @record = current_end_user.id
-   @record.save
+   @record.end_user_id = current_end_user.id
+   if @record.save
     redirect_to record_path(@record.id)
+   else
+    render:new
+   end
  end
 
  def show
@@ -28,8 +31,12 @@ class RecordController < ApplicationController
   
   def update
    @record = Record.find(params[:id])
-   @record.update(record_params)
-   redirect_to record_path(@record.id)
+   if @record.update(record_params)
+     redirect_to record_path(@record.id)
+   else
+    render:edit
+   end
+   
   end
   
   def destroy

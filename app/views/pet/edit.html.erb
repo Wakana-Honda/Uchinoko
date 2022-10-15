@@ -3,6 +3,7 @@
 </div>
 
 <%= form_with model: @pet do |f| %>
+ <%= render 'shared/errors', model: f.object %>
 
  <div class="form-group">
   <%= f.label :ウチの子の写真 %>
