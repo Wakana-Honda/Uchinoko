@@ -6,8 +6,11 @@ class PetController < ApplicationController
  def create
    @pet = Pet.new(pet_params)
    @pet.end_user_id = current_end_user.id
-   @pet.save
+   if @pet.save
     redirect_to pet_index_path
+   else
+    render:new
+   end
  end
 
   def index

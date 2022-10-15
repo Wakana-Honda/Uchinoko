@@ -4,6 +4,7 @@
 
 <div>
 <% @records.each do |record| %>
+ <%= record.created_at.strftime('%Y/%m/%d') %> 
  ペットの名前<%= record.pet.name %>
  フード名<%= record.food.name %>
 <%= link_to "詳細を見る",record_path(record.id) %>

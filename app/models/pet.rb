@@ -11,6 +11,8 @@ class Pet < ApplicationRecord
     pet_image.variant(resize_to_limit: [width, height]).processed
   end
   
+  validates :name, presence: true
+  
   # def get_pet_image
   # if pet_image.attached?
   #     image

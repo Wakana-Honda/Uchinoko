@@ -19,6 +19,7 @@ class RecordController < ApplicationController
   def index
    # binding.pry
    @records = Record.all
+   @records = current_end_user.records
   end
 
   def edit

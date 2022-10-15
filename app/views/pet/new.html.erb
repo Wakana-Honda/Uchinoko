@@ -2,6 +2,11 @@
 
 <%= form_with model: @pet, url: '/pet', method: :post do |f| %>
   
+  <%= render 'shared/errors', model: f.object %>
+  <!--< @pet.errors.full_messages.each do |message| %>-->
+  <!--   <= message %>-->
+  <!--< end %>-->
+  
  <div class="form-group">
   <%= f.label :ウチの子の写真 %>
   <%= f.file_field :pet_image,accept:"image/*" %>
