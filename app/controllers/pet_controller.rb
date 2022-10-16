@@ -16,7 +16,11 @@ class PetController < ApplicationController
   def index
    @pets = Pet.all
    @pets = current_end_user.pets
-
+  end
+  
+  def show
+   # binding pry
+   @pet = Pet.find(params[:id])
   end
 
   def edit

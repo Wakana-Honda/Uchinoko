@@ -1,2 +1,16 @@
-<h1>Pet#show</h1>
-<p>Find me in app/views/pet/show.html.erb</p>
+<div class ="title">
+<h3><strong><%= @pet.name %>ちゃんの記録</strong></h3>
+</div>
+
+<div>フード</div>
+<%= pie_chart @pet.foods.group(:name).count %>
+
+<div>フードごとの摂取量</div>
+
+<!--<= column_chart Record.group(:food_id).sum(:amount) %>-->
+
+<!--できたら実装したジャンルとタイプごとの記録-->
+<!--<= pie_chart @pet.foods.group(:type_id).count %>-->
+<!--<= pie_chart @pet.foods.group(:genre_id).count %>-->
+
+

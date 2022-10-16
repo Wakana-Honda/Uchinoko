@@ -1,6 +1,7 @@
 class Food < ApplicationRecord
   belongs_to :end_user,optional: true
-  has_many :records,dependent: :destroy
+  has_many :records, dependent: :destroy
+  has_many :pets, through: :records
   has_many :genres, dependent: :destroy
   has_many :types, dependent: :destroy
   has_one_attached :food_image

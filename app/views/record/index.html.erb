@@ -2,16 +2,24 @@
  <h3><strong>記録一覧</strong></h3>
 </div>
 
-<div>
-<% @records.each do |record| %>
- <%= record.created_at.strftime('%Y/%m/%d') %> 
- ペットの名前<%= record.pet.name %>
- フード名<%= record.food.name %>
-<%= link_to "詳細を見る",record_path(record.id) %>
-<%= link_to "削除",record_path(record.id),method: :delete %>
+<!--<%= pie_chart Food.group(:name).count %>-->
 
-<% end %>
+<% @records.each do |record| %>
+<div>
+ <%= record.created_at.strftime('%Y/%m/%d %H:%M') %> 
+ ペットの名前:<%= record.pet.name %>
+ フード名:<%= record.food.name %>
+ 摂取量:<%= record.amount %>
+ メモ:<%= record.memo %>
+<%= link_to "記録を編集する",edit_record_path(record) %>
+<!--なしにするかも<= link_to "詳細を見る",record_path(record.id) %>-->
+<%= link_to "削除",record_path(record.id),method: :delete %>
 </div>
 
+<% end %>
+
 <%= link_to "記録する",new_record_path %>
+
+
+<!--<= link_to 'New Product', new_product_path %>-->
 

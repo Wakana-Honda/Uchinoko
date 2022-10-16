@@ -7,17 +7,15 @@ class RecordController < ApplicationController
    @record = Record.new(record_params)
    @record.end_user_id = current_end_user.id
    if @record.save
-    redirect_to record_path(@record.id)
+    redirect_to record_index_path
    else
     render:new
    end
  end
 
- def show
-  @record = Record.find(params[:id])
-  # @pet = Record.find(params[:record][:name])
-  # @food = Food.find(params[:record][:name])
- end
+ # def show
+ #  @record = Record.find(params[:id])
+ # end
 
   def index
    # binding.pry

@@ -6,9 +6,10 @@
 </div>
 
 <% @foods.each do |food|%>
+ <div>
  <%= link_to food_path(food.id) do %>
   <%= image_tag food.get_food_image(100,100) %>
  <% end %>
  <%= food.name %>
- 
+ </div>
 <% end %>

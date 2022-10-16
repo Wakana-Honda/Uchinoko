@@ -2,6 +2,8 @@
  <h3><strong>記録詳細</strong></h3>
 </div>
 
+<%= pie_chart Record.group(:food_id).count %>
+
 <%= @record.pet.name %>
 <%= @record.food.name %>
 <%= @record.amount %>

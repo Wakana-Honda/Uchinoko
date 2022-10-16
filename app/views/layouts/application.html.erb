@@ -20,6 +20,10 @@
        <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
       </li>
       <% else %>
+       <%= link_to "ホーム",pet_index_path %>
+       <%= link_to "ログイン",pet_index_path %>
+       <%= link_to "新規登録",pet_index_path %>
+
        <!--<= render home_top_path %>-->
      <% end %>
     </header>

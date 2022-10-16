@@ -10,3 +10,5 @@
 
 <%= link_to "フード一覧に戻る", food_index_path %>
 <%= link_to "フードを編集する", edit_food_path(@food.id) %>
+
+<%= pie_chart @record.group(:name).count %>

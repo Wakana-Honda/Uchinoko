@@ -43,7 +43,7 @@ class FoodController < ApplicationController
   def destroy
    @food = Food.find(params[:id])
    @food.destroy
-    redirect_to food_index_path
+   redirect_to food_index_path
   end
   
   private
