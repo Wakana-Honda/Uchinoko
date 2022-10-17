@@ -1,32 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>PF</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+　　<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>ウチの子</title>
   </head>
 
   <body>
+    
     <header>
-     <% if end_user_signed_in? %>
-      <li>
-       <%= link_to "ウチの子",pet_index_path %>
-       <%= link_to "記録",record_index_path %>
-       <%= link_to "フード",food_index_path %>
-       <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
-      </li>
+     <div class = "container header-group">
+      <a href="/">
+      <span>ウチの子</span>
+      </a>
+     <span class = "nav_toggle">
+      <li></li>
+      <li></li>
+      <li></li>
+     </span>
+     <nav>
+      <ul class="nav">
+      <% if end_user_signed_in? %>
+        <li class="nav-list">
+         <%= link_to "ウチの子",pet_index_path %>
+        </li>
+        <li class="nav-list">
+         <%= link_to "記録",record_index_path %>
+        </li>
+        <li class="nav-list">
+         <%= link_to "フード",food_index_path %>
+        </li>
+        <li class="nav-list">
+         <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
+        </li>
       <% else %>
-       <%= link_to "ホーム",pet_index_path %>
-       <%= link_to "ログイン",pet_index_path %>
-       <%= link_to "新規登録",pet_index_path %>
-
-       <!--<= render home_top_path %>-->
+        <li class="nav-list">
+         <%= link_to "ホーム",pet_index_path %>
+        </li>
+        <li class="nav-list">
+         <%= link_to "ログイン",pet_index_path %>
+        </li>
+        <li class="nav-list">
+         <%= link_to "新規登録",pet_index_path %>
+        </li>
      <% end %>
+       </ul>
+      </nav>
+     </div>
     </header>
+    
+    <main>
     <%= yield %>
+    </main>
+    
   </body>
 </html>
