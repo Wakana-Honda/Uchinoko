@@ -60,4 +60,5 @@ gem 'rails-i18n'
 gem "enum_help"
 gem 'image_processing', '~> 1.2'
 gem 'chartkick'
-gem 'jquery-rails'
+gem 'bulma-rails', '~> 0.7.4'
+gem 'bulma-extensions-rails', '~> 1.0.30'

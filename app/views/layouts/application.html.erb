@@ -11,51 +11,52 @@
   </head>
 
   <body>
-    
-    <header>
-     <div class = "container header-group">
-      <a href="/">
-      <span>ウチの子</span>
-      </a>
-     <span class = "nav_toggle">
-      <li></li>
-      <li></li>
-      <li></li>
-     </span>
-     <nav>
-      <ul class="nav">
-      <% if end_user_signed_in? %>
-        <li class="nav-list">
-         <%= link_to "ウチの子",pet_index_path %>
-        </li>
-        <li class="nav-list">
-         <%= link_to "記録",record_index_path %>
-        </li>
-        <li class="nav-list">
-         <%= link_to "フード",food_index_path %>
-        </li>
-        <li class="nav-list">
-         <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li class="nav-list">
-         <%= link_to "ホーム",pet_index_path %>
-        </li>
-        <li class="nav-list">
-         <%= link_to "ログイン",pet_index_path %>
-        </li>
-        <li class="nav-list">
-         <%= link_to "新規登録",pet_index_path %>
-        </li>
-     <% end %>
-       </ul>
-      </nav>
-     </div>
-    </header>
+   <%= render  "shared/navbar" %>
+    <!--<header>-->
+    <!-- <div class = "container header-group">-->
+    <!--  <a href="/">-->
+    <!--  <span>ウチの子</span>-->
+    <!--  </a>-->
+    <!-- <span class = "nav_toggle">-->
+    <!--  <li></li>-->
+    <!--  <li></li>-->
+    <!--  <li></li>-->
+    <!-- </span>-->
+    <!-- <nav>-->
+    <!--  <ul class="nav">-->
+    <!--  < if end_user_signed_in? %>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "ウチの子",pet_index_path %>-->
+    <!--    </li>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "記録",record_index_path %>-->
+    <!--    </li>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "フード",food_index_path %>-->
+    <!--    </li>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>-->
+    <!--    </li>-->
+    <!--  < else %>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "ホーム",pet_index_path %>-->
+    <!--    </li>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "ログイン",pet_index_path %>-->
+    <!--    </li>-->
+    <!--    <li class="nav-list">-->
+    <!--     <= link_to "新規登録",pet_index_path %>-->
+    <!--    </li>-->
+    <!-- < end %>-->
+    <!--   </ul>-->
+    <!--  </nav>-->
+    <!-- </div>-->
+     
+    <!--</header>-->
     
     <main>
     <%= yield %>
     </main>
-    
+   
   </body>
 </html>
