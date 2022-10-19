@@ -2,61 +2,67 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-　　<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--<link rel="stylesheet" href="./css/my-stylesheet.css">-->
     <title>ウチの子</title>
   </head>
 
-  <body>
-   <%= render  "shared/navbar" %>
-    <!--<header>-->
-    <!-- <div class = "container header-group">-->
-    <!--  <a href="/">-->
-    <!--  <span>ウチの子</span>-->
-    <!--  </a>-->
-    <!-- <span class = "nav_toggle">-->
-    <!--  <li></li>-->
-    <!--  <li></li>-->
-    <!--  <li></li>-->
-    <!-- </span>-->
-    <!-- <nav>-->
-    <!--  <ul class="nav">-->
-    <!--  < if end_user_signed_in? %>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "ウチの子",pet_index_path %>-->
-    <!--    </li>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "記録",record_index_path %>-->
-    <!--    </li>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "フード",food_index_path %>-->
-    <!--    </li>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>-->
-    <!--    </li>-->
-    <!--  < else %>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "ホーム",pet_index_path %>-->
-    <!--    </li>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "ログイン",pet_index_path %>-->
-    <!--    </li>-->
-    <!--    <li class="nav-list">-->
-    <!--     <= link_to "新規登録",pet_index_path %>-->
-    <!--    </li>-->
-    <!-- < end %>-->
-    <!--   </ul>-->
-    <!--  </nav>-->
-    <!-- </div>-->
-     
-    <!--</header>-->
-    
-    <main>
-    <%= yield %>
-    </main>
-   
-  </body>
+  <body class="d-flex flex-column vh-100">
+      
+  <header class="shadow-sm">
+   <nav class="navbar navbar-expand-lg navbar-light">
+   <div class="container">
+   <a class="navbar-brand p-3" href="/">
+    ウチの子<!--<= image_tag('logo.png') %>-->
+   </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+   <ul class="navbar-nav ml-auto">
+    <% if end_user_signed_in? %>
+     <li class="nav-item">
+      <%= link_to "ウチの子",pet_index_path, class: 'nav-link text-dark' %>
+     </li>
+     <li class="nav-item">
+      <%= link_to "記録",record_index_path, class: 'nav-link text-dark' %>
+     </li>
+     <li class="nav-item">
+      <%= link_to "フード",food_index_path, class: 'nav-link text-dark' %>
+     </li>
+     <li class="nav-item">
+      <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+     </li>
+    <% else %>
+     <li class="nav-item">
+      <%= link_to "ホーム",pet_index_path, class: 'nav-link text-dark' %>
+     </li>
+     <li class="nav-item">
+      <%= link_to "ログイン",pet_index_path, class: 'nav-link text-dark' %>
+     </li>
+     <li class="nav-item">
+      <%= link_to "新規登録",pet_index_path, class: 'nav-link text-dark' %>
+     </li>
+    <% end %>
+      </ul>
+     </div>
+    </div>
+   </nav>
+  </header>
+  
+  <div class="container pt-3">
+   <%= yield %>
+  </div>
+  
+   <footer></footer>
+　
+　 </body>
+
 </html>
+
