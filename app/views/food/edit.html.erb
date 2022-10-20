@@ -1,5 +1,5 @@
 <div class ="title">
-<h3><strong>フードの新規登録</strong></h3>
+<h3><strong>フードの編集</strong></h3>
 </div>
 
 <%= form_with model: @food do |f| %>
@@ -31,8 +31,8 @@
   <%= f.text_area :memo %>
  </div>
  
- <%= f.submit '変更を保存する' %>
- <%= link_to "削除", food_path(@food.id), method: :delete %>
+ <%= f.submit '変更を保存する', class:"btn btn-info" %>
+ <%= link_to "削除", food_path(@food.id), method: :delete, class:"btn btn-danger" %>
 
  
 <% end %>

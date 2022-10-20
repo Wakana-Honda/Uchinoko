@@ -1,7 +1,7 @@
 <div class = "title">
  <h3><strong>ウチの子たち</strong></h3>
  <div class = "button">
-  <%= button_to 'うちの子を新しく登録する', new_pet_path, method: :get %>
+  <%= button_to 'うちの子を新しく登録する', new_pet_path, method: :get, class:"btn btn-warning" %>
  </div>
 </div>
 
@@ -19,8 +19,13 @@
     <%= pet.memo %>
     </span>
     <span class = "button">
-     <%= link_to 'うちの子を編集する', edit_pet_path(pet) %>
-     <%= link_to '記録を見る', pet_path(pet) %>
+     <%= link_to edit_pet_path(pet) do %>
+      <%= pet.name %>ちゃんを編集する
+     <% end %>
+     <%= link_to pet_path(pet) do %>
+      <%= pet.name %>ちゃんの記録
+     <% end %>
+     
     </span>
    </div>
   <% end %>

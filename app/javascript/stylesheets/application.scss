@@ -1,6 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
-// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-.btn {
-  border-radius: 0px;
-  padding: .5rem 1rem;
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// .btn {
+//   border-radius: 0px;
+//   padding: .5rem 1rem;
+// }
+
+body{
+ font-family:Meiryo ;
+ color: #555;
 }

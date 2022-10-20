@@ -4,16 +4,18 @@
  <%= render 'shared/errors', model: f.object %>
  <%= f.label :ジャンル名 %>
  <%= f.text_field :name,class:"name" %>
- <%= f.submit '新規登録' %>
+ <%= f.submit '新規登録',class:"btn btn-info" %>
 <% end %>
 
 
 <div><strong>ジャンル一覧</strong></div>
-
+ 
   <% @genres.each do |genre| %>
+   <div>
 　　<%= genre.name %>
-    <%= link_to "編集する", edit_genre_path(genre) %>
-    <%= link_to "削除", genre_path(genre),method: :delete %>
+    <%= link_to "編集する", edit_genre_path(genre), class:"btn btn-primary" %>
+    <%= link_to "削除", genre_path(genre),method: :delete, class:"btn btn-danger" %>
+   </div>
   <% end %>
-  
+
 
