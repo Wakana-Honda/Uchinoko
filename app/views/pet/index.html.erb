@@ -1,32 +1,39 @@
-<div class = "title">
- <h3><strong>ウチの子たち</strong></h3>
- <div class = "button">
-  <%= button_to 'うちの子を新しく登録する', new_pet_path, method: :get, class:"btn btn-warning" %>
- </div>
-</div>
+<table class="table">
+ 
+ <% @pets.each do |pet| %>
+ <!--<div class = "row mt-3">-->
+    
+ <!-- <div class = "col-md-4">-->
+ <tr>
+ <td><%= image_tag pet.get_pet_image(100,100) %></td>
+  <!--</div>-->
+    
+  <!--<div class = "col-md-4">-->
+  <td> 
+   <%= pet.name %><br>
+   <%= pet.age %>歳<br>
+   <%= pet.birthday %>生まれ<br>
+   <%= pet.gender_i18n %><br>
+   <%= pet.memo %>
+  </td>
+  
+  <!--<div class = "col-md-4">-->
+  <td>
+   <%= link_to edit_pet_path(pet) do %>
+    <%= pet.name %>ちゃんを編集する
+   <% end %><br>
+   <%= link_to pet_path(pet) do %>
+    <%= pet.name %>ちゃんの記録
+   <% end %>
+  </td>
+</tr>
+<% end %>
+</table>
 
-<div class ="wrap around"> 
-  <% @pets.each do |pet| %>
-   <div class="pet">
-    <img class = "image">
-    <%= image_tag pet.get_pet_image(50,50) %>
-    </img>
-    <span class="info">
-    <%= pet.name %>
-    <%= pet.age %>歳<br>
-    <%= pet.birthday %>
-    <%= pet.gender_i18n %><br>
-    <%= pet.memo %>
-    </span>
-    <span class = "button">
-     <%= link_to edit_pet_path(pet) do %>
-      <%= pet.name %>ちゃんを編集する
-     <% end %>
-     <%= link_to pet_path(pet) do %>
-      <%= pet.name %>ちゃんの記録
-     <% end %>
-     
-    </span>
-   </div>
-  <% end %>
+<div class="fixed_btn">
+ <%= link_to new_pet_path, method: :get, class:"btn btn-warning mr-3" do %>
+  <i class="fas fa-paw"></i>
+　 ウチの子を登録する
+　<i class="fas fa-chevron-right"></i>
+ <% end %>
 </div>

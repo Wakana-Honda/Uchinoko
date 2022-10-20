@@ -1,16 +1,11 @@
-<div class ="title">
- <h3><strong>フードの詳細</strong></h3>
-</div>
 
  <div>フード画像<%= image_tag @food.get_food_image(100,100) %></div>
  <div>フードの名前<%= @food.name %></div>
  <div>フードタイプ<%= @type.name %></div>
  <div>フードジャンル<%= @genre.name %></div>
- <duv>メモ<%= @food.memo %></div>
+ <div>メモ<%= @food.memo %></div>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
  <%= link_to "フードを編集する", edit_food_path(@food.id), class:"btn btn-primary" %>
  <%= link_to "フード一覧に戻る", food_index_path, class:"btn btn-secondary" %>
-</div>
 
 <!--<= pie_chart @record.group(:name).count %>-->

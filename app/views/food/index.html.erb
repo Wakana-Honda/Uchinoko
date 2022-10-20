@@ -1,15 +1,17 @@
-<div class ="title">
- <h3><strong>フード一覧</strong></h3>
- <div class = "button">
- <%= link_to "新しくフードを追加する", new_food_path, class:"btn btn-warning" %>
- </div>
-</div>
 
+<div class = "row">
 <% @foods.each do |food|%>
+ <div class="mx-1 my-3 px-1">
  <div>
  <%= link_to food_path(food.id) do %>
   <%= image_tag food.get_food_image(100,100) %>
  <% end %>
- <%= food.name %>
+ </div>
+ <div><%= food.name %></div>
  </div>
 <% end %>
+</div>
+
+<div class = "fixed_btn">
+ <%= link_to "新しくフードを追加する", new_food_path, class:"btn btn-warning" %>
+</div>

@@ -1,24 +1,30 @@
-<div class = "title">
- <h3><strong>記録一覧</strong></h3>
-</div>
 
-<%= link_to "記録する",new_record_path, class:"btn btn-warning" %>
+<%= link_to new_record_path, class:"btn btn-warning btn-lg btn-block" do %>
+ <i class="fas fa-pen"></i>
+ 記録する
+ <i class="fas fa-pen"></i>
+<% end %>
 
-<!--<%= pie_chart Food.group(:name).count %>-->
+<!--<= pie_chart Food.group(:name).count %>-->
 
+<table class="table table-striped mt-3">
 <% @records.each do |record| %>
-<div>
- <%= record.created_at.strftime('%Y/%m/%d %H:%M') %> 
- ペットの名前:<%= record.pet.name %>
- フード名:<%= record.food.name %>
- 摂取量:<%= record.amount %>
- メモ:<%= record.memo %>
-<%= link_to "記録を編集する",edit_record_path(record) %>
+  <tr>
+  <td><%= record.created_at.strftime('%Y/%m/%d %H:%M') %> </td>
+  <td><%= record.pet.name %></td>
+  <td><%= record.food.name %></td>
+  <td><%= record.amount %></td>
+  <td><%= record.memo %></td>
+  <td>
+   <%= link_to edit_record_path(record) do %>
+    <i class="fas fa-edit"></i>
+   <% end %>
 <!--なしにするかも<= link_to "詳細を見る",record_path(record.id) %>-->
-<%= link_to "削除",record_path(record.id),method: :delete %>
-</div>
+  </td>
+  </tr>
 
 <% end %>
+</table>
 
 
 

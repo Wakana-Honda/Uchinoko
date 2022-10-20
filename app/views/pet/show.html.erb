@@ -1,5 +1,5 @@
 <div class ="title">
-<h3><strong><%= @pet.name %>ちゃんの記録</strong></h3>
+<h3><strong><i class="fas fa-paw"></i><%= @pet.name %>ちゃんの記録<i class="fas fa-paw"></i></strong></h3>
 </div>
 
 <div>フード</div>
@@ -7,7 +7,10 @@
 
 <div>フードごとの摂取量</div>
 
-<%= link_to "ウチの子一覧に戻る", pet_index_path, class:"btn btn-secondary"%>
+<!--<div class = "fixed_btn_lg">-->
+ <%= link_to "ウチの子一覧に戻る", pet_index_path, class:"btn btn-secondary btn-lg btn-block" %>
+<!--</div>-->
+
 <!--<= column_chart Record.group(:food_id).sum(:amount) %>-->
 
 <!--できたら実装したジャンルとタイプごとの記録-->
