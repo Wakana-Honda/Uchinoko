@@ -1,7 +1,7 @@
 ja:
   activerecord:
     attributes:
-      user:
+      end_user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -26,7 +26,7 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
     models:
-      user: ユーザー
+      end_user: ユーザー
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -37,10 +37,10 @@ ja:
     failure:
       already_authenticated: すでにログインしています。
       inactive: アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。
-      invalid: "%{authentication_keys}またはパスワードが違います。"
+      invalid: "%{authentication_keys}またはパスワードが違います"
       last_attempt: もう一回誤るとアカウントがロックされます。
       locked: アカウントはロックされています。
-      not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
+      not_found_in_database: "%{authentication_keys}またはパスワードが違います"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: ログインもしくはアカウント登録してください。
       unconfirmed: メールアドレスの本人確認が必要です。
@@ -139,5 +139,5 @@ ja:
       not_found: は見つかりませんでした。
       not_locked: はロックされていません。
       not_saved:
-        one: エラーが発生したため %{resource} は保存されませんでした。
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+        # one: エラーが発生したため %{resource} は保存されませんでした。
+        # other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"

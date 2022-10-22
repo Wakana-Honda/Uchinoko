@@ -8,6 +8,26 @@
 body{
  font-family:Meiryo ;
  color: #555;
+// background: url(/images/image.jpg);
+ }
+
+main{
+  background: 
+  linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
+  url(/images/image.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: fixed;
+ }
+
+ul{
+ list-style: none;
+}
+
+.alert-warning{
+ color: #555;
+ background-color:#ffe6e6;
+ border-color:#ff0000;
 }
 
 // ミニバーナー
@@ -24,3 +44,17 @@ position: fixed;
 bottom: 10px;
 center: 10px;
 }
+
+// .img1{
+// 	height: 200px;
+// 	background: url(app/assets/images/image1.jpeg) no-repeat;
+// }
+// .img2{
+// 	height: 200px;
+// 	background: url(app/assets/images/image1.jpeg) no-repeat;
+// }
+// .img3{
+// 	height: 200px;
+// 	background: url(app/assets/images/image1.jpeg) no-repeat;
+// }
+
