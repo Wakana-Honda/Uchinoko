@@ -1,6 +1,8 @@
 class RecordController < ApplicationController
   def new
    @record = Record.new
+   @pets = current_end_user.pets
+   @foods = current_end_user.foods
   end
   
   def create
@@ -11,7 +13,7 @@ class RecordController < ApplicationController
    else
     render:new
    end
- end
+  end
 
  # def show
  #  @record = Record.find(params[:id])
@@ -20,6 +22,7 @@ class RecordController < ApplicationController
   def index
    # binding.pry
    @records = Record.all
+   # @records = Record.order(created_at: :desc)
    @records = current_end_user.records
   end
 

@@ -1,11 +1,49 @@
+<div class = "row">
+ <div class = "col-md-6 text-center">
+  <%= image_tag @food.get_food_image(300,300) %>
+ </div>
+ <div class = "col-md-6">
+  <div class = "food_info py-3 px-3 mt-3">
+   <u><div class ="h2 pb-3"><%= @food.name %></div></u>
+   
+   
+   <div class ="h4 pb-2">タイプ：<%= @type.name %></div>
+  
+  
+   <div class ="h4 pb-2">ジャンル：</div>
+   <% @food.genres.each do |genre| %>
+   
+    <%= genre.name %>
+   <% end %>
+   
+   <div class ="h4 pb-2">メモ：<%= @food.memo %></div>
+  </div>
+ </div>
+</div>
 
- <div>フード画像<%= image_tag @food.get_food_image(100,100) %></div>
- <div>フードの名前<%= @food.name %></div>
- <div>フードタイプ<%= @type.name %></div>
- <div>フードジャンル<%= @genre.name %></div>
- <div>メモ<%= @food.memo %></div>
+<div class="d-flex justify-content-between">
+ <div>
+  <% if @food.previous.present? %>
+   <%= link_to food_path(@food.previous), class:"text-muted h1" do %>
+    <i class="fas fa-caret-left"></i>
+   <% end %>
+  <% end %>
+ </div>
 
- <%= link_to "フードを編集する", edit_food_path(@food.id), class:"btn btn-primary" %>
- <%= link_to "フード一覧に戻る", food_index_path, class:"btn btn-secondary" %>
+ <div>
+  <% if @food.next.present? %>
+   <%= link_to food_path(@food.next), class:"text-muted h1" do %>
+    <i class="fas fa-caret-right"></i>
+   <% end %>
+  <% end %>
+ </div>
+</div>
 
+ <div class = "my-3 text-center">
+  <%= link_to "フードを編集する", edit_food_path(@food.id), class:"btn btn-primary" %>
+  <%= link_to "フード一覧に戻る", food_index_path, class:"btn btn-secondary" %>
+ </div>
 <!--<= pie_chart @record.group(:name).count %>-->
+
+https://pikawaka.com/rails/where
+https://qiita.com/nakayuu07/items/3d5e2f8784b6f18186f2

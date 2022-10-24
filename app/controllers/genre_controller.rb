@@ -2,11 +2,13 @@ class GenreController < ApplicationController
   def index
    @genre = Genre.new
    @genres = Genre.all
+   @end_user = current_end_user
   end
  
  def create
   # binding.pry
    @genre = Genre.new(genre_params)
+  # @genre.end_user_id = current_end_user.id
    @genres = Genre.all
    if @genre.save
     redirect_to genre_index_path

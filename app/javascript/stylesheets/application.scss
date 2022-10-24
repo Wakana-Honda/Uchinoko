@@ -1,9 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-// .btn {
-//   border-radius: 0px;
-//   padding: .5rem 1rem;
-// }
 
 body{
  font-family:Meiryo ;
@@ -11,18 +7,13 @@ body{
 // background: url(/images/image.jpg);
  }
  
- // .navbar{
- //  padding-top: 1px;
- // }
-
 main{
-  background: 
-  linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
-  url(/images/image.jpg);
+  background-color:#ffffcc; 
+  // linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
+  // url(/images/image.jpg);
   background-repeat: repeat-y;
   background-size: cover;
   background-attachment: fixed;
-  // height :1000px;
  }
 
 ul{
@@ -57,16 +48,14 @@ center: 10px;
  background-color :#e6f3ff;
 }
 
-// .img1{
-// 	height: 200px;
-// 	background: url(app/assets/images/image1.jpeg) no-repeat;
-// }
-// .img2{
-// 	height: 200px;
-// 	background: url(app/assets/images/image1.jpeg) no-repeat;
-// }
-// .img3{
-// 	height: 200px;
-// 	background: url(app/assets/images/image1.jpeg) no-repeat;
-// }
+.food_info{
+ border: 4px solid; 
+ border-color: #d3d3d3;
+ border-radius: 8px;
+ background-color :#ffffff;
+}
 
+.table{
+  // width: 400px;
+  max-width: 100%;
+}

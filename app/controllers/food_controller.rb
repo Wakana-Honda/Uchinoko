@@ -1,6 +1,7 @@
 class FoodController < ApplicationController
   def new
    @food = Food.new
+   # @end_user_genre = Genre.where
   end
  
  def create
@@ -8,7 +9,7 @@ class FoodController < ApplicationController
    @food.end_user_id = current_end_user.id
    if @food.save
     redirect_to food_index_path
-    else
+   else
      render:new
    end
  end
@@ -21,8 +22,9 @@ class FoodController < ApplicationController
   def show
    # binding.pry
    @food = Food.find(params[:id])
+   # @food = current_end_user.foods
    @type = Type.find(@food.type_id)
-   @genre = Genre.find(@food.genre_id)
+   # @genre = Genre.find(@food.genre_id)
    # genre = @food.genres
    # type = @food.types
   end
@@ -49,9 +51,10 @@ class FoodController < ApplicationController
   private
   # ストロングパラメータ
   def food_params
-    params.require(:food).permit(:type_id,:genre_id,:name,:memo,:food_image)
+    params.require(:food).permit(:type_id, :name,:memo,:food_image, genre_ids: [])
   end
   
   
   
 end
+
