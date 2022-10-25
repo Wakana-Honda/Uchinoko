@@ -1,0 +1,6 @@
+<%= form_with model: @genre, url: '/genre', remore:true, method: :post do |f| %>
+ <%#= render 'shared/errors', model: f.object %>
+ <%= f.label :ジャンル名 %>
+ <%= f.text_field :name,class:"name" %>
+ <%= f.submit '新規登録',class:"btn btn-info" %>
+<% end %>

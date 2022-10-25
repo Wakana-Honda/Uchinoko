@@ -11,7 +11,7 @@ class TypeController < ApplicationController
    @type = Type.new(type_params)
    @type.end_user_id = current_end_user.id
    if @type.save
-    redirect_to type_index_path
+    redirect_to new_food_path
    else
      render:index
    end

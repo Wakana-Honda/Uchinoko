@@ -2,7 +2,7 @@ class GenreController < ApplicationController
   def index
    @genre = Genre.new
    @genres = Genre.all
-   @genre = current_end_user.genres
+   @genres = current_end_user.genres
   end
  
  def create
@@ -11,7 +11,7 @@ class GenreController < ApplicationController
    @genre.end_user_id = current_end_user.id
    @genres = Genre.all
    if @genre.save
-    redirect_to genre_index_path
+    redirect_to new_food_path
    else
      render:index
    end
