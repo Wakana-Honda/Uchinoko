@@ -1,10 +1,12 @@
 class Food < ApplicationRecord
   belongs_to :end_user,optional: true
+  belongs_to :genres,optional: true
+  belongs_to :types,optional: true
+  
   has_many :records, dependent: :destroy
   has_many :pets, through: :records
-  has_many :food_genres, dependent: :destroy
-  has_many :genres, through: :food_genres, dependent: :destroy
-  has_many :types, dependent: :destroy
+  
+  # has_many :genres, through: :food_genres, dependent: :destroy
   has_one_attached :food_image
   
   def get_food_image(width, height)
@@ -24,7 +26,7 @@ class Food < ApplicationRecord
    
    validates :name, presence: true
    validates :type_id, presence: true
-   # validates :genre_id, presence: true
+   validates :genre_id, presence: true
 
 end
 

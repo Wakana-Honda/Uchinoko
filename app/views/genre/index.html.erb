@@ -1,7 +1,7 @@
 <h3><strong>ジャンル一覧・追加</strong></h3>
 
 <%= form_with model: @genre, url: '/genre', method: :post do |f| %>
- <%= render 'shared/errors', model: f.object %>
+ <%#= render 'shared/errors', model: f.object %>
  <%= f.label :ジャンル名 %>
  <%= f.text_field :name,class:"name" %>
  <%= f.submit '新規登録',class:"btn btn-info" %>
@@ -10,10 +10,8 @@
 
 <div><strong>ジャンル一覧</strong></div>
  
-  <% @end_user.foods.each do |food| %>
-   <% food.genres.each do |genre| %>
+  <% @genres.each do |genre| %>
     <%= genre.name %>
-   <% end %>
   <% end %>
   
  <!-- <= link_to "編集する", edit_genre_path(genre), class:"btn btn-primary" %>-->

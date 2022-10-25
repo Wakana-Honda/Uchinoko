@@ -1,6 +1,8 @@
 class FoodController < ApplicationController
   def new
    @food = Food.new
+   @types = current_end_user.types
+   @genres = current_end_user.genres
    # @end_user_genre = Genre.where
   end
  
@@ -22,15 +24,14 @@ class FoodController < ApplicationController
   def show
    # binding.pry
    @food = Food.find(params[:id])
-   # @food = current_end_user.foods
    @type = Type.find(@food.type_id)
-   # @genre = Genre.find(@food.genre_id)
-   # genre = @food.genres
-   # type = @food.types
+   @genre = Genre.find(@food.genre_id)
   end
 
   def edit
    @food = Food.find(params[:id])
+   @types = current_end_user.types
+   @genres = current_end_user.genres
   end
   
   def update
@@ -51,7 +52,7 @@ class FoodController < ApplicationController
   private
   # ストロングパラメータ
   def food_params
-    params.require(:food).permit(:type_id, :name,:memo,:food_image, genre_ids: [])
+    params.require(:food).permit(:type_id, :name,:memo,:food_image, :genre_id)
   end
   
   

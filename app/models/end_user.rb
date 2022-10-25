@@ -7,5 +7,7 @@ class EndUser < ApplicationRecord
   has_many :records, dependent: :destroy
   has_many :pets, dependent: :destroy
   has_many :foods, dependent: :destroy
+  has_many :genres, dependent: :destroy
+  has_many :types, dependent: :destroy
  
 end

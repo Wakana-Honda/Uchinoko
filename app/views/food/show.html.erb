@@ -10,12 +10,8 @@
    <div class ="h4 pb-2">タイプ：<%= @type.name %></div>
   
   
-   <div class ="h4 pb-2">ジャンル：</div>
-   <% @food.genres.each do |genre| %>
-   
-    <%= genre.name %>
-   <% end %>
-   
+   <div class ="h4 pb-2">ジャンル：<%= @genre.name %></div>
+
    <div class ="h4 pb-2">メモ：<%= @food.memo %></div>
   </div>
  </div>

@@ -2,12 +2,14 @@ class TypeController < ApplicationController
   def index
    @type = Type.new
    @types = Type.all
+   @types = current_end_user.types
   end
  
  def create
   # binding.pry
-   @type = Type.new(type_params)
    @types = Type.all
+   @type = Type.new(type_params)
+   @type.end_user_id = current_end_user.id
    if @type.save
     redirect_to type_index_path
    else
