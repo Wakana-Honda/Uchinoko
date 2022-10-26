@@ -6,15 +6,11 @@ class TypeController < ApplicationController
   end
  
  def create
-  # binding.pry
    @types = Type.all
+   @types = current_end_user.types
    @type = Type.new(type_params)
    @type.end_user_id = current_end_user.id
-   if @type.save
-    redirect_to new_food_path
-   else
-     render:index
-   end
+   @type.save
  end
  
  def edit
