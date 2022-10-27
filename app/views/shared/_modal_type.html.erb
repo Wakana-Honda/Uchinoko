@@ -1,6 +1,4 @@
-<% type.errors.full_messages.each do |msg| %>
- <p><%= msg %></p>
-<% end %>
+<div class="js-type-errors"></div>
 
 <%= form_with model: type, url: '/type', method: :post, local: false do |f| %>
 

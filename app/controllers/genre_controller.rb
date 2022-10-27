@@ -10,7 +10,15 @@ class GenreController < ApplicationController
     @genres = current_end_user.genres
     @genre = Genre.new(genre_params)
     @genre.end_user_id = current_end_user.id
-    @genre.save
+    respond_to do |format|
+     if @genre.save
+      format.html { redirect_to genre_index_path }
+      format.js 
+     else
+      format.html { render :index } 
+      format.js { render :errors } 
+     end
+    end
   end
  
   def edit

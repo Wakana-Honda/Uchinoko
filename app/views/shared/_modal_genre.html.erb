@@ -1,6 +1,4 @@
-<% genre.errors.full_messages.each do |msg| %>
- <p><%= msg %></p>
-<% end %>
+<div class="js-genre-errors"></div>
 
 <%= form_with model: genre, url: '/genre', method: :post, local: false do |f| %>
  

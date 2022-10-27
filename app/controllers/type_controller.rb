@@ -10,7 +10,15 @@ class TypeController < ApplicationController
    @types = current_end_user.types
    @type = Type.new(type_params)
    @type.end_user_id = current_end_user.id
-   @type.save
+   respond_to do |format|
+     if @type.save
+      format.html { redirect_to type_index_path }
+      format.js 
+     else
+      format.html { render :index } 
+      format.js { render :errors } 
+     end
+   end
  end
  
  def edit
