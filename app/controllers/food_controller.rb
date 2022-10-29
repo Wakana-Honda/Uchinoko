@@ -23,15 +23,20 @@ class FoodController < ApplicationController
  end
 
   def index
+   # binding.pry
    @foods = Food.all
    @foods = current_end_user.foods
   end
 
   def show
-   # binding.pry
    @food = Food.find(params[:id])
    @type = Type.find(@food.type_id)
    @genre = Genre.find(@food.genre_id)
+   # # if @genre.present?
+   #  @genre = Genre.find(@food.genre_id)
+   # else
+   #  @genre = []
+   # end
   end
 
   def edit

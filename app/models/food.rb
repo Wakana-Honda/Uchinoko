@@ -23,11 +23,14 @@ class Food < ApplicationRecord
   def next
    Food.where("id > ?", self.id).order("id ASC").first
   end
-   
+  
+  # def genre_id
+  #  genre_id ? genre_id : 'no name'
+  # end
+  
    validates :name, presence: true
    validates :type_id, presence: true
    validates :genre_id, presence: true
 
 end
 
-# もしうまく行かんかったら、has_manyを単数形にして見て

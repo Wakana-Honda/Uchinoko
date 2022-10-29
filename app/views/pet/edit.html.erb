@@ -33,6 +33,6 @@
 	
   <%= f.submit '変更を保存する', class:"btn btn-info" %>
   <%= link_to '削除', pet_path(@pet.id), method: :delete, 
-    "data-confirm" => "本当に削除しますか？", class:"btn btn-danger" %>
+    "data-confirm" => "これまでの記録も全て削除されます。本当に削除しますか？", class:"btn btn-danger" %>
   
 <% end %>

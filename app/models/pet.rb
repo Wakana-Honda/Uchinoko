@@ -14,15 +14,6 @@ class Pet < ApplicationRecord
   
   validates :name, presence: true
   
-  # def get_pet_image
-  # if pet_image.attached?
-  #     image
-  #   else
-  #     'no_image.jpg'
-  #   end
-  # end
-  # end
-  
   enum gender: { man: 0, woman: 1}
   
 end
