@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :end_users
   
   root to:'homes#top'
+  get 'about', to:'homes#about'
   
   resources:genre,only:[:index,:create,:edit,:update,:destroy]
   resources:type,only:[:index,:create,:edit,:update,:destroy]

@@ -1,0 +1,25 @@
+<div class ="title">
+<h3><strong><i class="fas fa-paw"></i><%= @pet.name %>ちゃんの記録<i class="fas fa-paw"></i></strong></h3>
+</div>
+
+<!--<div class = "h3">フード</div>-->
+<%= pie_chart @pet.foods.group(:name).count %>
+
+ <%# @pet_food.each do |record| %>
+  <%#= record.food.name %>
+  <%#= record.amount %>
+  <%#= pie_chart @chart %>
+ <%# end %>
+
+
+ <%= link_to "ウチの子一覧に戻る", pet_index_path, class:"btn btn-secondary btn-lg btn-block my-3" %>
+
+<%#= column_chart Record.group(:food_id).sum(:amount) %>
+
+<!--できたら実装したジャンルとタイプごとの記録-->
+<%#= pie_chart @pet.foods.group(:type_id).count %>
+<!--<= pie_chart @pet.foods.group(:genre_id).count %>-->
+
+
+
+

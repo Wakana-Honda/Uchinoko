@@ -16,7 +16,7 @@ class RecordController < ApplicationController
   end
 
  # def show
- #  @record = Record.find(params[:id])
+ #   @record = Record.find(params[:id])
  # end
 
   def index
