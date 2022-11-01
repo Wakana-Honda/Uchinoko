@@ -8,13 +8,69 @@ body{
  }
  
 main{
-  background-color:#ffffcc; 
+  // background-color:#ffffcc; 
   // linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
-  // url(/images/image.jpg);
+  background: url(/images/back.jpeg);
   background-repeat: repeat-y;
   background-size: cover;
   background-attachment: fixed;
  }
+ 
+ .btn-dark {
+   color: #fff;
+   background-color: #800000;
+   border-color: #800000;
+ }
+ 
+.btn-dark:hover, .btn-dark:focus, 
+.btn-dark:active, .btn-dark:active:focus, .btn-dark:active:hover, .btn-dark:active.focus,
+.btn-dark.active, .btn-dark.active:focus, .btn-dark.active:hover, .btn-dark.active.focus,
+.open > .dropdown-toggle.btn-dark, 
+.open > .dropdown-toggle.btn-dark:hover,
+.open > .dropdown-toggle.btn-dark:focus, 
+.open > .dropdown-toggle.btn-dark.focus,
+.btn-dark.disabled:hover, .btn-dark[disabled]:hover, fieldset[disabled] .btn-dark:hover,
+.btn-dark.disabled:focus, .btn-dark[disabled]:focus, fieldset[disabled] .btn-dark:focus,
+.btn-dark.disabled.focus, .btn-dark[disabled].focus, fieldset[disabled] .btn-dark.focus {
+    background: #800000; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    color: #fff; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+ 
+ .btn-primary{
+  color: #fff;
+   background-color: #bc8f8f;
+   border-color: #bc8f8f;
+ }
+ 
+.btn-primary:hover, .btn-primary:focus, 
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary, 
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus, 
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+    background: #bc8f8f; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    color: #fff; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+
+ 
+ .line{
+  white-space: nowrap;
+  overflow: hidden;
+ }
+ 
+ .textb br {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+ .textb br {
+   display: inline;
+  }
+}
 
 ul{
  list-style: none;

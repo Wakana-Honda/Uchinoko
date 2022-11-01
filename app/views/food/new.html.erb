@@ -21,7 +21,7 @@
  <div class="form-group">
   <%= f.label :genre_id,'ジャンル' %>
   <%= f.collection_select :genre_id, @genres, :id, :name, options = { include_blank: "選択してください" } %>
-  <button type="button" class="btn btn-sm btn-primary ml-3" data-toggle="modal" 
+  <button type="button" class="btn btn-sm btn-success ml-3" data-toggle="modal" 
                 data-target="#genreModal" data-whatever="@genre">ジャンルを追加</button>
  
  </div>
@@ -29,7 +29,7 @@
  <div class="form-group">
   <%= f.label :type_id,'フードタイプ' %>
   <%= f.collection_select :type_id, @types, :id, :name, options = { include_blank: "選択してください" } %>
-  <button type="button" class="btn btn-sm btn-primary ml-3" data-toggle="modal" 
+  <button type="button" class="btn btn-sm btn-success ml-3" data-toggle="modal" 
                            data-target="#typeModal" data-whatever="@type">タイプを追加</button>
  
  </div>
@@ -39,7 +39,7 @@
   <%= f.text_area :memo %>
  </div>
  
- <%= f.submit '登録する',class:"btn btn-info" %>
+ <%= f.submit '登録する',class:"btn btn-info mb-3" %>
  
 <% end %>
 
@@ -53,7 +53,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
-        <button type="button" class="btn btn-primary">登録</button>
       </div>
     </div>
   </div>
@@ -69,7 +68,6 @@
    </div>
    <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
-    <button type="button" class="btn btn-primary">登録</button>
    </div>
   </div>
  </div>
