@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   root to:'homes#top'
   get 'about', to:'homes#about'
+  get 'info', to:'homes#info'
   
   resources:genre,only:[:index,:create,:edit,:update,:destroy]
   resources:type,only:[:index,:create,:edit,:update,:destroy]
