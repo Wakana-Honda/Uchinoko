@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import "skippr"; 
+
 
 body{
  font-family:Meiryo ;
@@ -15,6 +17,21 @@ main{
   background-size: cover;
   background-attachment: fixed;
  }
+ 
+ #container{
+  height: 500px;
+}
+ 
+ .image1 {
+  background-image: url(/images/image1.jpeg);
+ }
+ .image2 {
+  background-image: url(/images/image2.jpeg);
+ }
+ .image3 {
+  background-image: url(/images/image3.jpeg);
+ }
+ 
  
  .btn-dark {
    color: #fff;
@@ -98,10 +115,10 @@ center: 10px;
 }
 
 .pet_info{
- border: 4px solid; 
- border-color: #d3d3d3;
- border-radius: 8px;
- background-color :#e6f3ff;
+ border: dashed 2px #ffb03f; 
+ border-radius: 9px;
+ box-shadow: 0px 0px 0px 5px #fffde8;
+ background-color :#fffde8;
 }
 
 .food_info{
@@ -116,52 +133,18 @@ center: 10px;
   max-width: 100%;
 }
 
-.image1 {
-  background-image: url(https://p.e-words.jp/img/PNG.png);
-  height: 100px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  position: static
+.btn-flat-simple {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
 }
 
-.image2 {
-  background-image: url(https://play-lh.googleusercontent.com/6wUgTzT_teY8_G2cl4nJZJ9aumkm89N3WggSFv1FayW-utPY653XC3U-HeoQTYTf2xc=w240-h480-rw);
-  height: 100px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  position: static
+.btn-flat-simple:hover {
+  background: #00bcd4;
+  color: white;
 }
-
-.image3 {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png);
-  height: 100px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  position: static
-}
-
-// .slide-items {
-//   list-style: none;
-//   position: relative;
-//   width: 200px;
-//   height: 200px;
-//   overflow: hidden;
-// }
-
-// .slide-items img {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 100%;
-//   transition: 4s linear transform .4s;
-//   object-fit: cover;
-// }
-
-// .slide-items .zoom {
-//   transform: scale(1.05);
-// }
