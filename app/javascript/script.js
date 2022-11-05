@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
-    transition : 'slide',
+    transition : 'fade',
     // 変化に係る時間(ミリ秒)
     speed : 1000,
     // easingの種類

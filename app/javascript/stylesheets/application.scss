@@ -18,6 +18,8 @@ main{
   background-attachment: fixed;
  }
  
+ 
+ 
  #container{
   height: 500px;
 }
@@ -135,9 +137,8 @@ center: 10px;
 
 .btn-flat-simple {
   position: relative;
-  display: inline-block;
   font-weight: bold;
-  padding: 0.25em 0.5em;
+  // padding: 0.25em 0.5em;
   text-decoration: none;
   color: #00BCD4;
   background: #ECECEC;
