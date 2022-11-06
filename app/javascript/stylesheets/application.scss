@@ -2,11 +2,9 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import "skippr"; 
 
-
 body{
  font-family:Meiryo ;
  color: #555;
-// background: url(/images/image.jpg);
  }
  
 main{
@@ -17,8 +15,6 @@ main{
   background-size: cover;
   background-attachment: fixed;
  }
- 
- 
  
  #container{
   height: 500px;
@@ -116,11 +112,9 @@ bottom: 10px;
 center: 10px;
 }
 
-.pet_info{
- border: dashed 2px #ffb03f; 
- border-radius: 9px;
- box-shadow: 0px 0px 0px 5px #fffde8;
- background-color :#fffde8;
+.pet_log{
+ background: url(/images/pet_log.png);
+ // background-color :#fffde8;
 }
 
 .food_info{
@@ -135,17 +129,93 @@ center: 10px;
   max-width: 100%;
 }
 
-.btn-flat-simple {
-  position: relative;
-  font-weight: bold;
-  // padding: 0.25em 0.5em;
+.sticky {
+  display: inline-block;
+  padding: 0.2em 0.5em;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
-  transition: .4s;
+  background: #f7f7f7;
+  border-left: solid 6px #9acd32;/*左線*/
+  color: #696969;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.sticky:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
 }
 
-.btn-flat-simple:hover {
-  background: #00bcd4;
-  color: white;
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  // width: 70px;
+  // height: 70px;
+  margin-top: 15px;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+.hiddenA {
+  text-align: center;
+  animation-name: hidden1;
+  animation-duration: 5.0s;
+  // animation-iteration-count: infinite;
+  margin-top: 15px;
+}
+ 
+@keyframes hidden1 {
+ 
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.liner{
+ position: relative;
+ background: linear-gradient(transparent 40%, yellow 40%);
+}
+
+.balloon3-right-btm {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 0 5px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a58eff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.balloon3-right-btm:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #a58eff;
+  z-index: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

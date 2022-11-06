@@ -1,18 +1,18 @@
 <div class = "row">
  <% @foods.each do |food|%>
-  <div class = "col-lg-2 py-3">
-   <div>
-    <%= link_to food_path(food.id) do %>
-     <%= image_tag food.get_food_image(150,150) %>
-    <% end %>
-   </div>
-   <div class = "pt-1"><%= food.name %></div>
+ <div class="mx-1 px-3 my-1">
+  <%= link_to food_path(food.id) do %>
+  <div>
+    <%= image_tag food.get_food_image(150,150) %>
+  </div>
+   <div class = "text-center py-3"><span class = "sticky"><%= food.name %></span></div>
+   <% end %>
   </div>
  <% end %>
 </div>
 
 <div class = "fixed_btn">
- <%= link_to new_food_path, class:"btn btn-lg btn-warning" do %>
+ <%= link_to new_food_path, class:"btn btn-warning" do %>
   <i class="fas fa-bone"></i>
   フードを追加する
  <% end %>

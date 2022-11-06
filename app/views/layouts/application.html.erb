@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': "reload" %>
     <title>ウチの子</title>
   </head>
 
@@ -83,7 +83,7 @@
     </div>
    <% end %>
  
-   <div class="container-fluid">
+   <div class="container-lg">
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
  
