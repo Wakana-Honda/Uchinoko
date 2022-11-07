@@ -20,9 +20,15 @@ class PetController < ApplicationController
   
   def show
    # binding pry
+   @pets = Pet.all
+   @pets = current_end_user.pets
    @pet = Pet.find(params[:id])
-   # @pet_amount = current_end_user.records.where(amount:  )
-   # @chart = @pet_food.group(:amount).count
+   if @pet.age.empty?
+    @empty_result = @pet.age"歳"
+   else
+    @empty_result = "No Date"
+   end
+   
   end
   
   def edit
