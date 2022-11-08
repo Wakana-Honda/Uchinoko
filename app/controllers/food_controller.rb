@@ -13,6 +13,8 @@ class FoodController < ApplicationController
  
  def create
    @food = Food.new(food_params)
+   @types = current_end_user.types
+   @genres = current_end_user.genres
    @food.end_user_id = current_end_user.id
    if @food.save
     redirect_to food_index_path

@@ -18,18 +18,19 @@ class PetController < ApplicationController
    @pets = current_end_user.pets
   end
   
-  def show
-   # binding pry
-   @pets = Pet.all
-   @pets = current_end_user.pets
-   @pet = Pet.find(params[:id])
-   if @pet.age.empty?
-    @empty_result = @pet.age"歳"
-   else
-    @empty_result = "No Date"
-   end
+  # def show
+  #  # binding pry
+  #  @pets = Pet.all
+  #  @pets = current_end_user.pets
+  #  @pet = Pet.find(params[:id])
+  #  # @pet = Pet.find_by(age: params[:pet][:age])
+  #  if Pet.exists?(age: params[:pet][:age])
+  #    "#{params[:pet][:age]}歳"
+  #  else
+  #   "no date"
+  #  end
    
-  end
+  # end
   
   def edit
    @pet = Pet.find(params[:id])

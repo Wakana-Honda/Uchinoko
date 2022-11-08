@@ -21,16 +21,33 @@
   </trt>
   <tr>
    <th>年齢</th>
-    <!--< if pet.age.len>-->
-   <td><%= pet.age %>歳</td>
+   <td>
+   <% if pet.age == nil %>
+     no date
+   <% else %>
+    <%= pet.age %>歳
+   <% end %>
+   </td>
   </tr>
   <tr>
    <th>誕生日</th>
-   <td class = "btd"><%= pet.birthday %></td>
+   <td class = "btd">
+    <% if pet.age == nil %>
+     no date
+    <% else %>
+     <%= pet.birthday %>
+    <% end %>
+   </td>
   </tr>
   <tr>
    <th>性別</th>
-   <td><%= pet.gender_i18n %></td>
+   <td>
+    <% if pet.age == nil %> 
+     no date
+    <% else %>  
+     <%= pet.gender_i18n %>
+    <% end %>
+   </td>
   </tr>
   <tr>
    <th>メモ</th>
